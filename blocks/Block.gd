@@ -11,6 +11,9 @@ var block_parent = null
 
 onready var list_finder = $ListFinder
 
+var is_a_drag_child = false
+var drag_child_list = []
+
 func _ready():
 	block_parent = get_parent()
 
@@ -31,7 +34,12 @@ func _process(delta):
 			end_drag()
 
 func get_closest_list():
-	var options = list_finder.get_overlapping_areas()
+	var options_src = list_finder.get_overlapping_areas()
+	
+	var options = []
+	for option in options_src:
+		if not option.is_a_drag_child:
+			options.append(option)
 	
 	if options.empty():
 		return null
@@ -47,6 +55,12 @@ func get_closest_list():
 			
 	return closest
 	#print(options)
+
+func clear_drag_children():
+	for child in drag_child_list:
+		child.is_a_drag_child = false
+		
+	drag_child_list.clear()
 
 func end_drag():
 	z_index = 0
@@ -69,8 +83,25 @@ func end_drag():
 	new_parent.block_list.insert(new_index, self)
 	
 	block_parent = new_parent
+	clear_drag_children()
+	
+func mark_drag_children(list):
+	var bl = get_node_or_null("BlockList")
+	if bl != null:
+		bl.is_a_drag_child = true
+		list.append(bl)
+		
+		for child in bl.block_list:
+			child.is_a_drag_child = true
+			list.append(child)
+			
+			child.mark_drag_children(list)
+			
 	
 func start_drag():
+	if is_dragging:
+		return
+	
 	z_index = 100
 	
 	last_parent = block_parent
@@ -82,6 +113,9 @@ func start_drag():
 	is_dragging = true
 	drag_pos_start = global_position
 	drag_mouse_start = get_global_mouse_position()
+	
+	drag_child_list.clear()
+	mark_drag_children(drag_child_list)
 	
 func _on_Block_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:

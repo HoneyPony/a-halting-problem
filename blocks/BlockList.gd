@@ -1,6 +1,7 @@
 extends Node2D
 
 var block_list = []
+var is_a_drag_child = false
 
 onready var col = $CollisionShape2D
 onready var col_shape: RectangleShape2D = $CollisionShape2D.shape
@@ -32,7 +33,10 @@ func arrange_children():
 		
 		var target = Vector2(target_x, target_y)
 		
-		child.global_position += (target - child.global_position) * 0.3
+		var f = 0.3
+		if child.is_a_drag_child:
+			f = 1.0
+		child.global_position += (target - child.global_position) * f
 		
 		y += child.get_height()
 		
