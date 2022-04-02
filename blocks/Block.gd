@@ -18,10 +18,13 @@ func _ready():
 	block_parent = get_parent()
 
 func get_height():
-	# TODO: Make this more robust!
+	# TODO: Make this more robust (also should it be more efficient?)!
 	var bl = get_node_or_null("BlockList")
 	if bl != null:
-		return bl.block_list.size() * 64 + 128
+		var height = 128
+		for b in bl.block_list:
+			height += b.get_height()
+		return height
 		
 	return 64
 
