@@ -14,6 +14,9 @@ var max_repeats_left = 3
 var repeats_left = 0
 export var run_by_deleting = false
 
+func reset_for_run():
+	delegate = null
+
 func get_next_command():
 	if delegate != null:
 		return delegate.get_next_command()
@@ -21,6 +24,9 @@ func get_next_command():
 	if block_list.empty():
 		return null
 		
+	# In case the list size changes between runs.
+	if run_index >= block_list.size():
+		run_index = 0
 	var command = block_list[run_index]
 	
 	if command.command == "repeat":
@@ -98,6 +104,11 @@ func _ready():
 	for child in get_children():
 		if child.is_in_group("Block"):
 			block_list.append(child)
+			
+	if get_parent().is_in_group("Block"):
+		for child in get_parent().get_children():
+			if child.is_in_group("Block"):
+				block_list.append(child)
 
 func compute_drop_index(node):
 	var index = 0
@@ -106,7 +117,7 @@ func compute_drop_index(node):
 		if block.global_position.y < node.global_position.y:
 			index += 1
 			
-		block.block_parent = self
+		#block.block_parent = self
 			
 	return index
 
@@ -119,7 +130,7 @@ func arrange_children():
 		var local = child.global_position - global_position
 		
 		var target_x = x
-		var target_y =  y + 32 * global_scale.y
+		var target_y = y + 32 * global_scale.y
 		
 		var target = Vector2(target_x, target_y)
 		

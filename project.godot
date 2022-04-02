@@ -18,6 +18,10 @@ config/icon="res://icon.png"
 
 GS="*res://GS.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [layer_names]
 
 3d_physics/layer_32="Mouse Detect"

@@ -26,11 +26,15 @@ func get_option():
 
 func _ready():
 	block_parent = get_parent()
+	if block_parent.is_in_group("Block"):
+		block_parent = block_parent.get_node("BlockList")
 	
 	var col1 = $CollisionShape2D
 	var col2 = $ListFinder/CollisionShape2D
 	
-	var halfwidth = $Sprite.get_rect().size.x * 0.5
+	# First 0.5: half the width.
+	# Second 0.5: sprites are all 2x.
+	var halfwidth = $Sprite.get_rect().size.x * 0.5 * 0.5
 	
 	col1.shape.extents.x = halfwidth
 	col2.shape.extents.x = halfwidth
@@ -55,7 +59,7 @@ func get_height():
 		
 	return 64
 
-func _process(delta):
+func _physics_process(delta):
 	if is_dragging:
 		var diff = get_global_mouse_position() - drag_mouse_start
 		global_position = drag_pos_start + diff
