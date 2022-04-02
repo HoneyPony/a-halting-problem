@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="64"
+   viewBox="0 0 67.733332 16.933334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="empty_block2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.90583672"
+     inkscape:cx="147.37755"
+     inkscape:cy="-80.588475"
+     inkscape:window-width="1620"
+     inkscape:window-height="1018"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="text18966"
+     units="px"
+     width="64px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient9518">
+      <stop
+         style="stop-color:#434343;stop-opacity:0"
+         offset="0"
+         id="stop9514" />
+      <stop
+         style="stop-color:#707070;stop-opacity:1"
+         offset="1"
+         id="stop9516" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9518"
+       id="linearGradient9520"
+       x1="33.525974"
+       y1="23.64847"
+       x2="18.522064"
+       y2="1.9621001"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="scale(0.99800146,1)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect3863"
+       style="fill:url(#linearGradient9520);fill-opacity:1;stroke-width:1.70894377;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 2.0096862,0 H 65.723648 c 1.113366,0 2.009686,0.89811499 2.009686,2.0137107 V 14.919624 c 0,1.115595 -0.89632,2.01371 -2.009686,2.01371 H 2.0096862 C 0.89632007,16.933334 0,16.035219 0,14.919624 V 2.0137107 C 0,0.89811499 0.89632007,0 2.0096862,0 Z" />
+    <g
+       aria-label="..."
+       id="text18966"
+       style="font-size:10.5833px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';stroke-width:0.264583">
+      <path
+         d="m 7.3675802,11.460288 h 0.089031 q 0.1384934,0 0.2374172,0.09892 0.098924,0.09645 0.098924,0.234944 0,0.143439 -0.1013969,0.23989 -0.098924,0.09645 -0.2349441,0.09645 h -0.089031 q -0.1384934,0 -0.2374172,-0.09645 -0.098924,-0.09892 -0.098924,-0.237417 0,-0.143439 0.098924,-0.23989 0.101397,-0.09645 0.2374172,-0.09645 z"
+         style="font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.126623"
+         id="path19378" />
+      <path
+         d="m 13.391879,11.460288 h 0.08903 q 0.138494,0 0.237417,0.09892 0.09892,0.09645 0.09892,0.234944 0,0.143439 -0.101396,0.23989 -0.09892,0.09645 -0.234945,0.09645 h -0.08903 q -0.138493,0 -0.237417,-0.09645 -0.09892,-0.09892 -0.09892,-0.237417 0,-0.143439 0.09892,-0.23989 0.101397,-0.09645 0.237417,-0.09645 z"
+         style="font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.126623"
+         id="path21236" />
+      <path
+         d="m 18.576427,11.460288 h 0.08903 q 0.138494,0 0.237417,0.09892 0.09892,0.09645 0.09892,0.234944 0,0.143439 -0.101396,0.23989 -0.09892,0.09645 -0.234945,0.09645 h -0.08903 q -0.138493,0 -0.237417,-0.09645 -0.09892,-0.09892 -0.09892,-0.237417 0,-0.143439 0.09892,-0.23989 0.101397,-0.09645 0.237417,-0.09645 z"
+         style="font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.126623"
+         id="path21238" />
+    </g>
+  </g>
+</svg>

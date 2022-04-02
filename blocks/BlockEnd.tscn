@@ -1,23 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://blocks/blank_3_2PATHED.svg" type="Texture" id=1]
-[ext_resource path="res://blocks/BlockRepeat.gd" type="Script" id=2]
-[ext_resource path="res://blocks/BlockList.tscn" type="PackedScene" id=3]
-[ext_resource path="res://blocks/BlockTheme.tres" type="Theme" id=4]
+[ext_resource path="res://blocks/blank_3.svg" type="Texture" id=1]
+[ext_resource path="res://blocks/BlockTheme.tres" type="Theme" id=2]
+[ext_resource path="res://blocks/Block.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-resource_local_to_scene = true
 extents = Vector2( 128.5, 32 )
 
 [sub_resource type="RectangleShape2D" id=2]
-resource_local_to_scene = true
 extents = Vector2( 128, 16 )
 
-[node name="BlockRepeat" type="StaticBody2D" groups=["Block"]]
+[node name="BlockEnd" type="StaticBody2D" groups=["Block"]]
 collision_mask = 0
 input_pickable = true
-script = ExtResource( 2 )
-command = "repeat"
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -32 )
@@ -25,24 +21,13 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="Label" type="Label" parent="Sprite"]
+[node name="LeftL" type="Label" parent="Sprite"]
 margin_left = 26.0
 margin_top = 28.0
 margin_right = 332.0
 margin_bottom = 107.0
-theme = ExtResource( 4 )
-text = "repeat"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Sprite"]
-margin_left = 420.0
-margin_top = 28.0
-margin_right = 726.0
-margin_bottom = 107.0
-theme = ExtResource( 4 )
-text = "3"
+theme = ExtResource( 2 )
+text = "stop"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,9 +39,6 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="BlockList" parent="." instance=ExtResource( 3 )]
-position = Vector2( 64, 32 )
 
 [node name="ListFinder" type="Area2D" parent="."]
 collision_layer = 0

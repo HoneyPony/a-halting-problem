@@ -8,6 +8,92 @@ onready var col_shape: RectangleShape2D = $CollisionShape2D.shape
 
 onready var empty_block = $EmptyBlock
 
+var delegate = null
+var run_index = 0
+var max_repeats_left = 3
+var repeats_left = 0
+export var run_by_deleting = false
+
+func get_next_command():
+	if delegate != null:
+		return delegate.get_next_command()
+		
+	if block_list.empty():
+		return null
+		
+	var command = block_list[run_index]
+	
+	if command.command == "repeat":
+		delegate = command.get_node("BlockList")
+		#if not run_by_deleting:
+		#	run_index = (run_index + 1) % block_list.size()
+		return delegate.get_next_command()
+	
+	return command
+	
+func erase_all_children():
+	for block in block_list:
+		#print("erasing block: ", block)
+		
+		var bl = block.get_node_or_null("BlockList")
+		if bl != null:
+			bl.erase_all_children()
+			
+		block.queue_free()
+	block_list = []
+	
+	#print("my block list: ", block_list)
+	
+func finished(command):
+	if delegate != null:
+		var new_delegate = delegate.finished(command)
+		
+		if run_by_deleting:
+			#print("new delegate: ", new_delegate)
+			
+			if new_delegate == null:
+				#print("Got to delete delegate...")
+				
+				var parent = delegate.get_parent()
+				
+				delegate.erase_all_children()
+				
+				# Erase the repeat block itself.
+				block_list.erase(parent)
+				parent.queue_free()
+				
+			delegate = new_delegate
+				
+			return
+		
+		delegate = new_delegate
+		
+		if delegate != null:
+			return self
+		
+	
+	if command == null:
+		return null
+	
+	if run_by_deleting:
+		block_list.erase(command)
+		command.queue_free()
+		
+	else:
+		run_index += 1
+		if run_index >= block_list.size():
+			run_index = 0
+			
+			repeats_left -= 1
+			
+			if repeats_left <= 0:
+				repeats_left = max_repeats_left
+				return null
+					
+		return self
+			
+	return null
+
 func _ready():
 	for child in get_children():
 		if child.is_in_group("Block"):
@@ -30,15 +116,20 @@ func arrange_children():
 	
 	for child in block_list:
 		
-		var target_x = global_position.x + x
-		var target_y = global_position.y + y + 32 * global_scale.y
+		var local = child.global_position - global_position
+		
+		var target_x = x
+		var target_y =  y + 32 * global_scale.y
 		
 		var target = Vector2(target_x, target_y)
 		
 		var f = 0.3
 		if child.is_a_drag_child:
 			f = 1.0
-		child.global_position += (target - child.global_position) * f
+			
+		local += (target - local) * f
+		child.global_position = global_position + local
+		#child.global_position += (target - child.global_position) * f
 		
 		y += child.get_height() * global_scale.y
 		

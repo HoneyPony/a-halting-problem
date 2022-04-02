@@ -14,8 +14,35 @@ onready var list_finder = $ListFinder
 var is_a_drag_child = false
 var drag_child_list = []
 
+export var options = []
+
+export var command = "stop"
+
+func get_option():
+	var button = get_node_or_null("Sprite/Options")
+	if button == null:
+		return null
+	return button.selected
+
 func _ready():
 	block_parent = get_parent()
+	
+	var col1 = $CollisionShape2D
+	var col2 = $ListFinder/CollisionShape2D
+	
+	var halfwidth = $Sprite.get_rect().size.x * 0.5
+	
+	col1.shape.extents.x = halfwidth
+	col2.shape.extents.x = halfwidth
+	col1.position.x = halfwidth
+	col2.position.x = halfwidth
+	
+	if not options.empty():
+		var button = get_node("Sprite/Options")
+		for option in options:
+			button.add_item(option)
+			
+		button.select(0)
 
 func get_height():
 	# TODO: Make this more robust (also should it be more efficient?)!
@@ -66,6 +93,11 @@ func clear_drag_children():
 	drag_child_list.clear()
 
 func end_drag():
+	if GS.current_held_block != self:
+		return
+		
+	GS.current_held_block = null
+	
 	z_index = 0
 	
 	is_dragging = false
@@ -102,8 +134,13 @@ func mark_drag_children(list):
 			
 	
 func start_drag():
+	if GS.current_held_block != null:
+		return
+	
 	if is_dragging:
 		return
+		
+	GS.current_held_block = self
 	
 	z_index = 100
 	
@@ -124,3 +161,14 @@ func _on_Block_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
 			start_drag()
+
+
+func _on_Options_pressed():
+	GS.current_held_block = get_node("Sprite/Options")
+
+
+
+func _on_Options_button_up():
+	var opt = get_node("Sprite/Options")
+	if opt == GS.current_held_block:
+		GS.current_held_block = null
