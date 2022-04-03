@@ -13,3 +13,5 @@ onready var defeat = $Defeat
 onready var block_etc = $BlockEtc
 onready var block_put = $BlockPut
 onready var block_pick = $BlockPick
+
+onready var plus_box = $PlusBox

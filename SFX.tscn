@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SFX.gd" type="Script" id=1]
 [ext_resource path="res://sounds/button_press.wav" type="AudioStream" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sounds/sound_block_etc.wav" type="AudioStream" id=10]
 [ext_resource path="res://sounds/sound_block_pick.wav" type="AudioStream" id=11]
 [ext_resource path="res://sounds/sound_block_place.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/plusbox.wav" type="AudioStream" id=13]
 
 [node name="SFX" type="Node"]
 pause_mode = 2
@@ -69,5 +70,11 @@ script = ExtResource( 3 )
 
 [node name="BlockPick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+bus = "SFX"
+script = ExtResource( 3 )
+
+[node name="PlusBox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -1.0
 bus = "SFX"
 script = ExtResource( 3 )

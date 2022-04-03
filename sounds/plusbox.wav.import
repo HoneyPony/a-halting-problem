@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plusbox.wav-2e61c3bbe51adb9226ed54cd8ffb3086.sample"
+
+[deps]
+
+source_file="res://sounds/plusbox.wav"
+dest_files=[ "res://.import/plusbox.wav-2e61c3bbe51adb9226ed54cd8ffb3086.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

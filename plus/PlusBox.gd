@@ -9,7 +9,7 @@ onready var bubble = $Bubble
 var bubble_alpha_t = 0.0
 
 var pickup_anim_t = -1.0
-var PICKUP_ANIM_MAX = 0.8
+var PICKUP_ANIM_MAX = 0.6
 var pickup_anim_start: Vector3
 
 func update_alpha(a):
@@ -66,6 +66,8 @@ func check_player():
 		pickup_anim_t = PICKUP_ANIM_MAX
 		pickup_anim_start = global_transform.origin
 
+		SFX.plus_box.play_sfx()
+
 var mouse_frames = 0
 
 func update_mouse():
@@ -99,6 +101,7 @@ func _physics_process(delta):
 		scale = Vector3(1.0 - t, 1.0 - t, 1.0 - t)
 		
 		if pickup_anim_t <= 0.0:
+			
 			queue_free()
 			
 		return
