@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://LSTheme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/ResetButton.gd" type="Script" id=2]
 [ext_resource path="res://ui/ConditionMenu.gd" type="Script" id=3]
 [ext_resource path="res://ui/NextButton.gd" type="Script" id=4]
@@ -22,7 +22,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 32.0
-color = Color( 0.772549, 0.772549, 0.772549, 1 )
+color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -63,7 +63,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 32.0
-color = Color( 0.772549, 0.772549, 0.772549, 1 )
+color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,7 +105,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 32.0
-color = Color( 0.772549, 0.772549, 0.772549, 1 )
+color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
