@@ -103,6 +103,25 @@ func finished(command):
 			
 	return null
 
+# This moves the *node objects themselves*, as if a node
+# is *originally parented* to a block list, but then the list
+# is deleted, the node will be deleted too, even though it isn't
+# parented in the meta-tree anymore.
+func move_child_nodes_to_root():
+	var desired_root = self
+	while desired_root != null:
+		if desired_root.is_in_group("CodeRoot"):
+			break
+		desired_root = desired_root.get_parent()
+		
+	if desired_root == self:
+		return
+		
+	for child in get_parent().get_children():
+		if child.is_in_group("Block"):
+			get_parent().remove_child(child)
+			desired_root.add_child(child)
+
 func _ready():
 	for child in get_children():
 		if child.is_in_group("Block"):
@@ -114,6 +133,8 @@ func _ready():
 				block_list.append(child)
 	else:
 		arrange_children(true)
+		
+	call_deferred("move_child_nodes_to_root")
 
 func compute_drop_index(node):
 	var index = 0

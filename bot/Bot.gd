@@ -2,6 +2,12 @@ extends KinematicBody
 
 var code_timer = 0.3
 
+onready var wheel_bl = $Bot2/WheelBL
+onready var wheel_fl = $Bot2/WheelFL
+onready var wheel_br = $Bot2/WheelBR
+onready var wheel_fr = $Bot2/WheelFR
+
+var wheel_coef = [0, 0, 0, 0]
 
 func finish_current_line():
 	if current_command != null:
@@ -82,8 +88,10 @@ func move_command(command):
 	var option = command.get_option()
 	if option == 0:
 		offset += transform.basis.z
+		wheel_coef = [-1, -1, -1, -1]
 	if option == 1:
 		offset -= transform.basis.z
+		wheel_coef = [1, 1, 1, 1]
 	#if option == 2:
 	#	offset.x -= 1
 	#if option == 3:
@@ -96,10 +104,12 @@ func move_command(command):
 	
 func rotate_command(command):
 	var rot = rotation
+	wheel_coef = [1, 1, -1, -1]
 	
 	var delta_y = PI / 2.0
 	if command.get_option() == 1:
 		delta_y *= -1
+		wheel_coef = [-1, -1, 1, 1]
 	
 	rot.y += delta_y
 	rot_end = Quat(rot)
@@ -166,6 +176,30 @@ func _physics_process(delta):
 	
 	var rot_quat = rot_start.slerp(rot_end, move_t)
 	rotation = rot_quat.get_euler()
+	
+	# radius = 0.4 ; v = w / r
+	var wheel_inc = amount_to_move.length() / 0.4
+	
+	# velocity for the arc...
+	# so v = wr
+	# radius = ~ 0.5
+	# so v = 0.5w
+	# w in this case is (pi/2) / GS.CODE_TIME_MAX, I suppose
+	# so v = 0.5 * pi / 2 / GS_CODE_TIME_MAX
+	# so v = 0.25 * PI / GS_CODE_TIME_MAX
+	# then, the new v of thew heels = w / r
+	# so the v for the wheels = (0.25 * PI / GS_CODE_TIME_MAX) / 0.4
+	# if we add that to the other one we should just get both, as
+	# neither will be active at the same time.
+	
+	if rot_end != rot_start:
+		wheel_inc += (0.25 * PI / GS.CODE_TIME_MAX) / 0.4
+		print(wheel_inc)
+	
+	wheel_bl.rotation.z += wheel_inc * wheel_coef[0]
+	wheel_br.rotation.z += wheel_inc * wheel_coef[1]
+	wheel_fl.rotation.z += wheel_inc * wheel_coef[2]
+	wheel_fr.rotation.z += wheel_inc * wheel_coef[3]
 	
 	# Only allow us to move on solid ground.
 	if global_transform.origin.y >= -0.3:
