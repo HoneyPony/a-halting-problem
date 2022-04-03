@@ -12,6 +12,8 @@ var levels = [
 	
 	preload("res://levels/LevelChoiceOfBoxes.tscn"),
 	preload("res://levels/LevelScenicRoute.tscn"),  # index 5
+	
+	preload("res://levels/LevelFirstRep.tscn")
 ]
 
 var current_level: PackedScene = null

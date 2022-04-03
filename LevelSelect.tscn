@@ -99,7 +99,21 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-index = 4
+index = 5
+
+[node name="LevelButton6" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -485.0
+margin_top = 394.0
+margin_right = -147.0
+margin_bottom = 456.0
+text = "A Small Loop"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+index = 6
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -123,3 +137,4 @@ __meta__ = {
 [connection signal="pressed" from="LevelButton3" to="LevelButton3" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton4" to="LevelButton4" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton5" to="LevelButton5" method="_on_pressed"]
+[connection signal="pressed" from="LevelButton6" to="LevelButton6" method="_on_pressed"]
