@@ -182,7 +182,9 @@ func _physics_process(delta):
 	
 	# velocity for the arc...
 	# so v = wr
-	# radius = ~ 0.5
+	# radius = ~ 0.5 // nmope, this is wrong
+	# radkus ~= 0.7810249675906654
+	# need to keep in mind the sqrt(x*x + y*y), not just use the y coord
 	# so v = 0.5w
 	# w in this case is (pi/2) / GS.CODE_TIME_MAX, I suppose
 	# so v = 0.5 * pi / 2 / GS_CODE_TIME_MAX
@@ -190,15 +192,19 @@ func _physics_process(delta):
 	# then, the new v of thew heels = w / r
 	# so the v for the wheels = (0.25 * PI / GS_CODE_TIME_MAX) / 0.4
 	# if we add that to the other one we should just get both, as
-	# neither will be active at the same time.
+	# neither will be active at the same time.\
+	
+	# it seems like we also have to multiply by delta? otherwise we go
+	# really really fast... seemed like before I couldn't tell the speed
+	# purely because it was goiong so fast it was definitely aliasing.
 	
 	if rot_end != rot_start:
-		wheel_inc += (0.25 * PI / GS.CODE_TIME_MAX) / 0.4
-		print(wheel_inc)
+		wheel_inc += delta * (0.5 * 0.7810249675906654 * PI / GS.CODE_TIME_MAX) / 0.4
+		#print(wheel_inc)
 	
 	wheel_bl.rotation.z += wheel_inc * wheel_coef[0]
-	wheel_br.rotation.z += wheel_inc * wheel_coef[1]
-	wheel_fl.rotation.z += wheel_inc * wheel_coef[2]
+	wheel_fl.rotation.z += wheel_inc * wheel_coef[1]
+	wheel_br.rotation.z += wheel_inc * wheel_coef[2]
 	wheel_fr.rotation.z += wheel_inc * wheel_coef[3]
 	
 	# Only allow us to move on solid ground.
