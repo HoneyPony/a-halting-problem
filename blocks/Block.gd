@@ -20,6 +20,8 @@ export var command = "stop"
 
 var shine_t = 100.0
 
+var options_enum = null
+
 func get_option():
 	var button = get_node_or_null("Sprite/Options")
 	if button == null:
@@ -44,11 +46,11 @@ func _ready():
 	col2.position.x = halfwidth
 	
 	if not options.empty():
-		var button = get_node("Sprite/Options")
+		options_enum = get_node("Sprite/Options")
 		for option in options:
-			button.add_item(option)
+			options_enum.add_item(option)
 			
-		button.select(0)
+		options_enum.select(0)
 
 func get_height():
 	# TODO: Make this more robust (also should it be more efficient?)!
@@ -62,6 +64,15 @@ func get_height():
 	return 64
 
 func _physics_process(delta):
+	if options_enum != null:
+		if options_enum == GS.current_held_block:
+			if not options_enum.get_popup().visible:
+				GS.current_held_block = null
+#	if reset_held_block_timer > 0.0:
+#		reset_held_block_timer -= delta
+#		if reset_held_block_timer <= 0:
+#			GS.current_held_block = null
+	
 	if shine_t < 1.5:
 		#print("shine t: ", shine_t)
 		shine_t += (delta / GS.CODE_TIME_MAX)
@@ -178,11 +189,21 @@ func _on_Block_input_event(viewport, event, shape_idx):
 
 
 func _on_Options_pressed():
-	GS.current_held_block = get_node("Sprite/Options")
+	if GS.current_held_block == null:
+		GS.current_held_block = get_node("Sprite/Options")
+	else:
+		options_enum.get_popup().hide()
 
-
+var reset_held_block_timer = -1.0
 
 func _on_Options_button_up():
-	var opt = get_node("Sprite/Options")
-	if opt == GS.current_held_block:
-		GS.current_held_block = null
+	pass
+		#GS.current_held_block = null
+
+
+func _on_Options_item_selected(index):
+#	var opt = get_node("Sprite/Options")
+#	if opt == GS.current_held_block:
+#		#print("Reset", GS.current_held_block)
+#		reset_held_block_timer = 0.1
+	pass # Replace with function body.

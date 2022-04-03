@@ -83,4 +83,5 @@ __meta__ = {
 
 [connection signal="input_event" from="." to="." method="_on_Block_input_event"]
 [connection signal="button_up" from="Sprite/Options" to="." method="_on_Options_button_up"]
+[connection signal="item_selected" from="Sprite/Options" to="." method="_on_Options_item_selected"]
 [connection signal="pressed" from="Sprite/Options" to="." method="_on_Options_pressed"]

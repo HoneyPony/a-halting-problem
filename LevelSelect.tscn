@@ -1,8 +1,80 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://LSTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ui/LevelButton.gd" type="Script" id=3]
+[ext_resource path="res://SceneChange.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="LevelSelect" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
+color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LevelButton0" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -131.0
+margin_top = 145.0
+margin_right = 231.0
+margin_bottom = 207.0
+text = "Textbook Excerpt"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton1" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_top = 233.0
+margin_right = 199.0
+margin_bottom = 295.0
+text = "First Exercise"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+index = 1
+
+[node name="LevelButton2" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_top = 318.0
+margin_right = 199.0
+margin_bottom = 380.0
+text = "A Snaky Path"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+index = 2
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -329.0
+margin_top = 36.0
+margin_right = 329.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "A Halting Problem"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SceneChange" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="LevelButton0" to="LevelButton0" method="_on_pressed"]
+[connection signal="pressed" from="LevelButton1" to="LevelButton1" method="_on_pressed"]
+[connection signal="pressed" from="LevelButton2" to="LevelButton2" method="_on_pressed"]

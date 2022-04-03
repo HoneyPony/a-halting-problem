@@ -4,6 +4,15 @@ var Game = preload("res://levels/Level1.tscn")
 
 var LevelSelect = preload("res://LevelSelect.tscn")
 
+var levels = [
+	preload("res://levels/Introduction.tscn"),
+	preload("res://levels/Level1.tscn"),
+]
+
+var current_level: PackedScene = null
+
+var level_won_map = {}
+
 var code_execute_flag = false
 
 var code_stop_next_flag = false

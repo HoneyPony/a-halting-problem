@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 func _ready():
+	get_tree().paused = false
+	
 	GS.reset()
 	GS.scene_change = self
 	
