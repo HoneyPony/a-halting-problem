@@ -1,31 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://blocks/BlockMove.tscn" type="PackedScene" id=1]
 [ext_resource path="res://blocks/BlockList.tscn" type="PackedScene" id=2]
-[ext_resource path="res://blocks/Block.gd" type="Script" id=3]
-[ext_resource path="res://blocks/BlockList.gd" type="Script" id=4]
 
 [node name="Root" type="Node2D"]
 position = Vector2( 16, 16 )
 scale = Vector2( 2, 2 )
 
-[node name="BlockList" type="Area2D" parent="." instance=ExtResource( 2 )]
-collision_mask = 0
-script = ExtResource( 4 )
+[node name="BlockList" parent="." instance=ExtResource( 2 )]
 
-[node name="BlockMove" type="StaticBody2D" parent="BlockList" groups=["Block"] instance=ExtResource( 1 )]
-collision_mask = 0
-input_pickable = true
-script = ExtResource( 3 )
+[node name="BlockMove" parent="BlockList" instance=ExtResource( 1 )]
 options = [ "up", "down", "left", "right" ]
-command = "move"
 
-[node name="BlockMove2" type="StaticBody2D" parent="BlockList" groups=["Block"] instance=ExtResource( 1 )]
-collision_mask = 0
-input_pickable = true
-script = ExtResource( 3 )
+[node name="BlockMove2" parent="BlockList" instance=ExtResource( 1 )]
 options = [ "up", "down", "left", "right" ]
-command = "move"
-
-[connection signal="input_event" from="BlockList/BlockMove" to="BlockList/BlockMove" method="_on_Block_input_event"]
-[connection signal="input_event" from="BlockList/BlockMove2" to="BlockList/BlockMove2" method="_on_Block_input_event"]

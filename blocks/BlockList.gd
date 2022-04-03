@@ -18,6 +18,9 @@ func reset_for_run():
 	delegate = null
 
 func get_next_command():
+	if get_parent().is_in_group("Block"):
+		get_parent().shine_t = 0
+	
 	if delegate != null:
 		return delegate.get_next_command()
 		
@@ -109,6 +112,8 @@ func _ready():
 		for child in get_parent().get_children():
 			if child.is_in_group("Block"):
 				block_list.append(child)
+	else:
+		arrange_children(true)
 
 func compute_drop_index(node):
 	var index = 0
@@ -121,7 +126,7 @@ func compute_drop_index(node):
 			
 	return index
 
-func arrange_children():
+func arrange_children(force = false):
 	var x = 0
 	var y = 0
 	
@@ -138,11 +143,19 @@ func arrange_children():
 		if child.is_a_drag_child:
 			f = 1.0
 			
+		if force:
+			f = 1.0
+			
 		local += (target - local) * f
 		child.global_position = global_position + local
 		#child.global_position += (target - child.global_position) * f
 		
 		y += child.get_height() * global_scale.y
+		
+		if force:
+			var bl = child.get_node_or_null("BlockList")
+			if bl != null:
+				bl.arrange_children(true)
 		
 	$EmptyBlock.global_position.y = global_position.y + y #+ 32 * global_scale.y
 		

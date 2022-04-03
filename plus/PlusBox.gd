@@ -19,6 +19,8 @@ func get_alpha():
 	return bubble.get_active_material(0).albedo_color.a 
 
 func _ready():
+	update_alpha(0.0)
+	
 	if list_scene != null:
 		var x = list_scene.instance()
 		get_node("Viewport").call_deferred("add_child", x)

@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="LD50"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://levels/Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -24,6 +24,7 @@ settings/stdout/print_fps=true
 
 [layer_names]
 
+3d_physics/layer_2="Obstacle/Ground"
 3d_physics/layer_32="Mouse Detect"
 
 [physics]
@@ -36,4 +37,4 @@ quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.588235, 0.588235, 0.588235, 1 )
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://LevelEnv.tres"

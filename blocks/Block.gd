@@ -18,6 +18,8 @@ export var options = []
 
 export var command = "stop"
 
+var shine_t = 100.0
+
 func get_option():
 	var button = get_node_or_null("Sprite/Options")
 	if button == null:
@@ -60,12 +62,20 @@ func get_height():
 	return 64
 
 func _physics_process(delta):
+	if shine_t < 1.5:
+		#print("shine t: ", shine_t)
+		shine_t += (delta / GS.CODE_TIME_MAX)
+		
+		$Sprite.material.set_shader_param("shine_t", shine_t)
+	
 	if is_dragging:
 		var diff = get_global_mouse_position() - drag_mouse_start
 		global_position = drag_pos_start + diff
 		
 		if not Input.is_mouse_button_pressed(BUTTON_LEFT):
 			end_drag()
+			
+	
 
 func get_closest_list():
 	var options_src = list_finder.get_overlapping_areas()
