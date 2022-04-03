@@ -66,8 +66,12 @@ func check_player():
 		pickup_anim_t = PICKUP_ANIM_MAX
 		pickup_anim_start = global_transform.origin
 
+var mouse_frames = 0
+
 func _physics_process(delta):
 	mesh.rotate_y(3 * delta)
+	
+
 	
 	if pickup_anim_t >= 0.0:
 		pickup_anim_t -= delta
@@ -83,7 +87,15 @@ func _physics_process(delta):
 			
 		return
 	
-	
+	if has_mouse:
+		mouse_frames += 1
+	else:
+		mouse_frames -= 1
+		
+	mouse_frames = clamp(mouse_frames, 0, 10)
+	bubble_alpha_t = 0.0
+	if mouse_frames >= 5:
+		bubble_alpha_t = 1.0
 	
 	var a = get_alpha()
 	var a2 = bubble_alpha_t
@@ -100,11 +112,15 @@ func _physics_process(delta):
 
 	#bubble.look_at(GS.cam_3d.global_transform.origin, Vector3.UP)
 
+var has_mouse = false
+
 func _on_MouseDetect_mouse_entered():
-	bubble_alpha_t = 1.0
+	has_mouse = true
+	#ubble_alpha_t = 1.0
 	#bubble.show()
 
 
 func _on_MouseDetect_mouse_exited():
-	bubble_alpha_t = 0.0
+	has_mouse = false
+	#bubble_alpha_t = 0.0
 	#bubble.hide()

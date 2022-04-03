@@ -73,6 +73,20 @@ __meta__ = {
 }
 index = 3
 
+[node name="LevelButton4" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_top = 478.0
+margin_right = 199.0
+margin_bottom = 540.0
+text = "Fork in the Road"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+index = 4
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -93,3 +107,4 @@ __meta__ = {
 [connection signal="pressed" from="LevelButton1" to="LevelButton1" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton2" to="LevelButton2" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton3" to="LevelButton3" method="_on_pressed"]
+[connection signal="pressed" from="LevelButton4" to="LevelButton4" method="_on_pressed"]

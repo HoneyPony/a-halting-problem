@@ -16,7 +16,10 @@ var drag_child_list = []
 
 export var options = []
 
+export var selected_option = 0
+
 export var command = "stop"
+
 
 var shine_t = 100.0
 
@@ -50,7 +53,7 @@ func _ready():
 		for option in options:
 			options_enum.add_item(option)
 			
-		options_enum.select(0)
+		options_enum.select(selected_option)
 
 func get_height():
 	# TODO: Make this more robust (also should it be more efficient?)!

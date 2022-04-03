@@ -7,6 +7,7 @@ var levels = [
 	preload("res://levels/Level1.tscn"),
 	preload("res://levels/LevelSnakePath.tscn"), 
 	preload("res://levels/LevelGrabBox.tscn"),
+	preload("res://levels/LevelChoiceOfBoxes.tscn")
 ]
 
 var current_level: PackedScene = null

@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/ResetButton.gd" type="Script" id=2]
+[ext_resource path="res://ui/ConditionMenu.gd" type="Script" id=3]
+[ext_resource path="res://ui/NextButton.gd" type="Script" id=4]
+
+[node name="Layout" type="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -205.0
+margin_right = -381.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinMenu" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 32.0
+color = Color( 0.772549, 0.772549, 0.772549, 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WinMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -267.5
+margin_top = 13.0
+margin_right = 267.5
+margin_bottom = 65.0
+text = "Level Completed Successfully"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="Button" parent="WinMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -85.0
+margin_right = 64.0
+margin_bottom = -23.0
+text = "Next"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoppedMenu" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 32.0
+color = Color( 0.772549, 0.772549, 0.772549, 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cond = 1
+
+[node name="Label" type="Label" parent="StoppedMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -267.5
+margin_top = 13.0
+margin_right = 267.5
+margin_bottom = 65.0
+text = "Stopped Before The Goal"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResetButton" type="Button" parent="StoppedMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -82.5
+margin_top = -85.0
+margin_right = 82.5
+margin_bottom = -23.0
+text = "Reset"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FellMenu" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 32.0
+color = Color( 0.772549, 0.772549, 0.772549, 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cond = 2
+
+[node name="Label" type="Label" parent="FellMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -267.5
+margin_top = 13.0
+margin_right = 267.5
+margin_bottom = 65.0
+text = "You Fell Off"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResetButton" type="Button" parent="FellMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -82.5
+margin_top = -85.0
+margin_right = 82.5
+margin_bottom = -23.0
+text = "Reset"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="WinMenu/NextButton" to="WinMenu/NextButton" method="_on_pressed"]
+[connection signal="pressed" from="StoppedMenu/ResetButton" to="StoppedMenu/ResetButton" method="_on_pressed"]
+[connection signal="pressed" from="FellMenu/ResetButton" to="FellMenu/ResetButton" method="_on_pressed"]

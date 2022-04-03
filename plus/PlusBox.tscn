@@ -20,7 +20,7 @@ albedo_texture = SubResource( 6 )
 [sub_resource type="BoxShape" id=7]
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.8, 1, 0.8 )
+extents = Vector3( 0.8, 2.01222, 0.367078 )
 
 [node name="PlusBox" type="Spatial"]
 script = ExtResource( 2 )
@@ -38,7 +38,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="Mesh" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.4, 0 )
 
 [node name="Bubble" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19637, 0 )
@@ -55,7 +55,7 @@ shape = SubResource( 7 )
 [node name="DetectBot" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="DetectBot"]
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402416, 0 )
 shape = SubResource( 5 )
 
 [connection signal="mouse_entered" from="MouseDetect" to="." method="_on_MouseDetect_mouse_entered"]
