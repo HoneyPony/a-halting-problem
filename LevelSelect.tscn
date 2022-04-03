@@ -59,6 +59,20 @@ __meta__ = {
 }
 index = 2
 
+[node name="LevelButton3" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -90.0
+margin_top = 407.0
+margin_right = 198.0
+margin_bottom = 469.0
+text = "Parts Box"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+index = 3
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -78,3 +92,4 @@ __meta__ = {
 [connection signal="pressed" from="LevelButton0" to="LevelButton0" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton1" to="LevelButton1" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton2" to="LevelButton2" method="_on_pressed"]
+[connection signal="pressed" from="LevelButton3" to="LevelButton3" method="_on_pressed"]

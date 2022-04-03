@@ -5,4 +5,4 @@ func _on_pressed():
 	
 	var root = get_node_or_null("/root/Root/")
 	if root != null:
-		GS.level_won_map[root.index] = true
+		GS.level_won_map[root.level_index] = true
