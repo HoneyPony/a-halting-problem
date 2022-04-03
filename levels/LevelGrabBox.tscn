@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://LevelEnv.tres" type="Environment" id=1]
-[ext_resource path="res://MainTheme.tres" type="Theme" id=2]
+[ext_resource path="res://LSTheme.tres" type="Theme" id=2]
 [ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://ui/MessagesLayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/LevelRoot.gd" type="Script" id=5]
