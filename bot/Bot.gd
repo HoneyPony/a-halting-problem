@@ -4,6 +4,12 @@ var code_timer = 0.3
 
 
 func finish_current_line():
+	if current_command != null:
+		if current_command.command == "stop":
+			GS.bot_is_stopped = true
+			if on_goal:
+				GS.bot_has_won = true
+	
 	src_list.finished(current_command)
 	current_command = null
 	
@@ -45,6 +51,8 @@ func execute_next_line():
 		move_command(current_command)
 	if current_command.command == "rotate":
 		rotate_command(current_command)
+	#if current_command.command == "stop":
+	#	GS.bot_is_stopped = true
 	
 	
 var move_start: Vector3
@@ -99,11 +107,40 @@ func rotate_command(command):
 
 var grav_vel = Vector3.ZERO
 
+var on_goal = false
+
+func check_win():
+	on_goal = false
+	
+	for goal in get_tree().get_nodes_in_group("Goal"):
+		var pos = goal.global_transform.origin + Vector3(0.0, 1.0, 0.0)
+		var dist = global_transform.origin.distance_squared_to(pos)
+		
+		#print(dist)
+		
+		if dist <= 0.2 * 0.2:
+			on_goal = true
+
 func _physics_process(delta):
+	if GS.bot_is_stopped:
+		return
+		
+	# Stop processing once we fall off.
+	if global_transform.origin.y < -8:
+		hide()
+		return
+	
 	if GS.code_execute_flag:
 		code_timer -= delta
 		if code_timer <= 0:
 			finish_current_line()
+			
+			# The arrangement of the stopping code is so that
+			# the animation is still played. Need a guard before
+			# so we don't execute more code, and one after so
+			# that after we call finish() we don't do anything.
+			if GS.bot_is_stopped:
+				return
 			
 			if GS.code_stop_next_flag:
 				GS.code_execute_flag = false
@@ -111,9 +148,14 @@ func _physics_process(delta):
 				
 				src_list.reset_for_run()
 			else:
-				execute_next_line()
+				if global_transform.origin.y >= -0.01:
+					# Only execute if we're still on.
+					execute_next_line()
+				
 	else:
 		code_timer = GS.CODE_TIME_MAX
+		
+
 		
 	var move_t = 1.0 - (code_timer / GS.CODE_TIME_MAX)
 	
@@ -130,3 +172,5 @@ func _physics_process(delta):
 		move_and_collide(amount_to_move)
 	
 	grav_vel = move_and_slide(grav_vel + Vector3.DOWN * 30 * delta)
+
+	check_win()

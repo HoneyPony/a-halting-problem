@@ -2,6 +2,8 @@ extends Node
 
 var Game = preload("res://levels/Level1.tscn")
 
+var LevelSelect = preload("res://LevelSelect.tscn")
+
 var code_execute_flag = false
 
 var code_stop_next_flag = false
@@ -10,6 +12,7 @@ func reset():
 	code_execute_flag = false
 	code_stop_next_flag = false
 	current_held_block = null
+	bot_is_stopped = false
 
 var current_held_block = null
 
@@ -21,3 +24,6 @@ var bot = null
 var CODE_TIME_MAX = 0.5
 
 var scene_change = null
+
+var bot_is_stopped = false
+var bot_has_won = false

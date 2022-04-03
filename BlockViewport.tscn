@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://BlockViewport.gd" type="Script" id=3]
 
 [node name="BlockViewport" type="Control"]
@@ -28,24 +29,29 @@ physics_object_picking = true
 
 [node name="ListRoot" type="Node2D" parent="BlockViewport/Viewport"]
 position = Vector2( 8, 8 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -55.0
+margin_top = -101.0
+theme = ExtResource( 1 )
 color = Color( 0.772549, 0.772549, 0.772549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="ColorRect"]
-margin_left = 18.0
-margin_top = 17.0
-margin_right = 58.0
-margin_bottom = 37.0
-text = "Run!"
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = -31.0
+margin_right = 93.0
+margin_bottom = 31.0
+text = "Run Bot"
 __meta__ = {
 "_edit_use_anchors_": false
 }
