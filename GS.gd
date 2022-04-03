@@ -1,13 +1,11 @@
 extends Node
 
-var Game = preload("res://levels/Level1.tscn")
-
 var LevelSelect = preload("res://LevelSelect.tscn")
 
 var levels = [
 	preload("res://levels/Introduction.tscn"),
 	preload("res://levels/Level1.tscn"),
-	null, 
+	preload("res://levels/LevelSnakePath.tscn"), 
 	preload("res://levels/LevelGrabBox.tscn"),
 ]
 
@@ -24,6 +22,8 @@ func reset():
 	code_stop_next_flag = false
 	current_held_block = null
 	bot_is_stopped = false
+	bot_has_won = false
+	cam_3d_dragging = false
 
 var current_held_block = null
 

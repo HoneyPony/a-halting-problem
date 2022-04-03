@@ -70,4 +70,5 @@ __meta__ = {
 
 [connection signal="pressed" from="Menu/ResumeButton" to="." method="toggle_menu"]
 [connection signal="pressed" from="Menu/ResetButton" to="Menu/ResetButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="toggle_menu"]

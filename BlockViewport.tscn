@@ -42,7 +42,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="RunButton" type="Button" parent="ColorRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -56,4 +56,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="ColorRect/Button" to="BlockViewport" method="_on_Button_pressed"]
+[node name="Locked" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -21.0
+margin_right = 144.0
+margin_bottom = 21.0
+text = "[CODE LOCKED]"
+
+[connection signal="pressed" from="ColorRect/RunButton" to="BlockViewport" method="_on_Button_pressed"]

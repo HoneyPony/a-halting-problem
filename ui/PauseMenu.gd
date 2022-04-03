@@ -9,6 +9,10 @@ onready var pause_button = $PauseButton
 func _ready():
 	menu.modulate.a = 0
 	menu.hide()
+	
+	# In case we hide the root in editor.
+	# The root should never be hidden.
+	show()
 
 func toggle_menu():
 	menu_open = !menu_open
@@ -32,3 +36,7 @@ func _physics_process(delta):
 	#if menu.visible:
 	#	filter = MOUSE_FILTER_STOP
 	#menu.mouse_filter = filter
+
+
+func _on_QuitButton_pressed():
+	GS.scene_change.change(GS.LevelSelect)
