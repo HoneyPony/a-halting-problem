@@ -22,6 +22,11 @@ GS="*res://GS.gd"
 
 settings/stdout/print_fps=true
 
+[display]
+
+window/size/width=1080
+window/size/height=720
+
 [layer_names]
 
 3d_physics/layer_2="Obstacle/Ground"

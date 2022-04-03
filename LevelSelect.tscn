@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://LSTheme.tres" type="Theme" id=1]
+[ext_resource path="res://LSTheme_SmallerButtons.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/LevelButton.gd" type="Script" id=3]
 [ext_resource path="res://SceneChange.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/check_empty.svg" type="Texture" id=5]
+[ext_resource path="res://ui/LevelGroupManager.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -15,155 +17,691 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="LevelButton0" type="Button" parent="."]
+[node name="Groups" type="Control" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -131.0
-margin_top = 145.0
-margin_right = 231.0
-margin_bottom = 207.0
-text = "Textbook Excerpt"
-script = ExtResource( 3 )
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LevelButton1" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -89.0
-margin_top = 233.0
-margin_right = 199.0
-margin_bottom = 295.0
-text = "First Exercise"
-script = ExtResource( 3 )
+[node name="Group5" type="Control" parent="Groups"]
+margin_left = 226.0
+margin_top = 254.0
+margin_right = 266.0
+margin_bottom = 294.0
+rect_pivot_offset = Vector2( -408, -59 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-index = 1
 
-[node name="LevelButton2" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -465.0
-margin_top = 328.0
-margin_right = -177.0
-margin_bottom = 390.0
-text = "A Snaky Path"
-script = ExtResource( 3 )
+[node name="ColorRect" type="ColorRect" parent="Groups/Group5"]
+margin_left = -432.728
+margin_top = 151.728
+margin_right = -421.728
+margin_bottom = 613.728
+rect_rotation = -89.9999
+rect_pivot_offset = Vector2( 5.5, 17.7719 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-index = 2
 
-[node name="LevelButton3" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -466.0
-margin_top = 417.0
-margin_right = -178.0
-margin_bottom = 479.0
-text = "Parts Box"
-script = ExtResource( 3 )
+[node name="ColorRect2" type="ColorRect" parent="Groups/Group5"]
+margin_left = -433.0
+margin_top = 137.0
+margin_right = -430.0
+margin_bottom = 599.0
+rect_rotation = -89.9999
+rect_pivot_offset = Vector2( 5.5, 17.7719 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-index = 3
 
-[node name="LevelButton4" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 249.0
-margin_top = 289.0
-margin_right = 587.0
-margin_bottom = 351.0
-text = "Fork in the Road"
-script = ExtResource( 3 )
+[node name="ColorRect4" type="ColorRect" parent="Groups/Group5"]
+margin_left = -39.0
+margin_top = 43.0
+margin_right = -36.0
+margin_bottom = 98.0
+rect_rotation = -89.9999
+rect_pivot_offset = Vector2( 5.5, 17.7719 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-index = 4
 
-[node name="LevelButton5" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 238.0
-margin_top = 350.0
-margin_right = 576.0
-margin_bottom = 412.0
-text = "Scenic Route"
-script = ExtResource( 3 )
+[node name="ColorRect5" type="ColorRect" parent="Groups/Group5"]
+margin_left = -39.0
+margin_top = 60.0
+margin_right = -36.0
+margin_bottom = 115.0
+rect_rotation = -89.9999
+rect_pivot_offset = Vector2( 5.5, 17.7719 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-index = 5
 
-[node name="LevelButton6" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -472.0
-margin_top = 575.0
-margin_right = -134.0
-margin_bottom = 637.0
-text = "A Small Loop"
-script = ExtResource( 3 )
+[node name="ColorRect3" type="ColorRect" parent="Groups/Group5"]
+margin_left = -433.0
+margin_top = 159.0
+margin_right = -430.0
+margin_bottom = 621.0
+rect_rotation = -89.9999
+rect_pivot_offset = Vector2( 5.5, 17.7719 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-index = 6
 
-[node name="LevelButton7" type="Button" parent="."]
+[node name="Panel2" type="Panel" parent="Groups/Group5"]
+margin_right = 303.0
+margin_bottom = 215.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Groups/Group5/Panel2"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-margin_left = 55.0
-margin_top = 551.0
-margin_right = 393.0
-margin_bottom = 613.0
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -86.5
+margin_right = 90.0
+margin_bottom = 86.5
+custom_constants/separation = 16
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton7" type="Button" parent="Groups/Group5/Panel2/HBoxContainer"]
+margin_right = 215.0
+margin_bottom = 47.0
 text = "Stair Stepping"
 script = ExtResource( 3 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 index = 7
 
-[node name="LevelButton8" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 41.0
-margin_top = 619.0
-margin_right = 379.0
-margin_bottom = 681.0
+[node name="Check" type="TextureRect" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton7"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton8" type="Button" parent="Groups/Group5/Panel2/HBoxContainer"]
+margin_top = 63.0
+margin_right = 215.0
+margin_bottom = 110.0
 text = "A Long Shot"
 script = ExtResource( 3 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 index = 8
 
-[node name="LevelButton9" type="Button" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 44.0
-margin_top = 689.0
-margin_right = 382.0
-margin_bottom = 751.0
+[node name="Check" type="TextureRect" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton8"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton9" type="Button" parent="Groups/Group5/Panel2/HBoxContainer"]
+margin_top = 126.0
+margin_right = 215.0
+margin_bottom = 173.0
 text = "Twisting Curve"
 script = ExtResource( 3 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 index = 9
 
-[node name="Label" type="Label" parent="."]
+[node name="Check" type="TextureRect" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton9"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group4" type="Control" parent="Groups"]
+margin_left = -483.0
+margin_top = 385.0
+margin_right = -443.0
+margin_bottom = 425.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Groups/Group4"]
+margin_left = 232.0
+margin_top = 10.0
+margin_right = 235.0
+margin_bottom = 112.0
+rect_rotation = -89.9999
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Groups/Group4"]
+margin_left = 240.0
+margin_top = 70.0
+margin_right = 243.0
+margin_bottom = 172.0
+rect_rotation = -89.9999
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Groups/Group4"]
+margin_right = 271.0
+margin_bottom = 77.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton6" type="Button" parent="Groups/Group4/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -115.0
+margin_top = -23.5
+margin_right = 77.0
+margin_bottom = 23.5
+text = "A Small Loop"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+index = 6
+
+[node name="Check" type="TextureRect" parent="Groups/Group4/Panel2/LevelButton6"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group3" type="Control" parent="Groups"]
+margin_left = -182.0
+margin_top = 345.0
+margin_right = -142.0
+margin_bottom = 385.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Groups/Group3"]
+margin_left = 355.0
+margin_top = -49.0
+margin_right = 358.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Groups/Group3"]
+margin_left = 322.0
+margin_top = -49.0
+margin_right = 325.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Groups/Group3"]
+margin_left = 39.0
+margin_top = -72.0
+margin_right = 42.0
+margin_bottom = 6.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Groups/Group3"]
+margin_left = 72.0
+margin_top = -71.0
+margin_right = 75.0
+margin_bottom = 7.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Groups/Group3"]
+margin_left = 337.0
+margin_top = -48.0
+margin_right = 344.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Groups/Group3"]
+margin_right = 372.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="Groups/Group3/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -162.5
+margin_top = -55.0
+margin_right = 122.5
+margin_bottom = 55.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton4" type="Button" parent="Groups/Group3/Panel/HBoxContainer2"]
+margin_right = 285.0
+margin_bottom = 47.0
+text = "Fork in the Road"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+index = 4
+
+[node name="Check" type="TextureRect" parent="Groups/Group3/Panel/HBoxContainer2/LevelButton4"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton5" type="Button" parent="Groups/Group3/Panel/HBoxContainer2"]
+margin_top = 63.0
+margin_right = 285.0
+margin_bottom = 110.0
+text = "Scenic Route"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+index = 5
+
+[node name="Check" type="TextureRect" parent="Groups/Group3/Panel/HBoxContainer2/LevelButton5"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group2" type="Control" parent="Groups"]
+margin_left = -93.0
+margin_top = 164.0
+margin_right = -53.0
+margin_bottom = 204.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Groups/Group2"]
+margin_left = -80.0
+margin_top = 110.0
+margin_right = -77.0
+margin_bottom = 212.0
+rect_rotation = -89.9999
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Groups/Group2"]
+margin_left = -77.0
+margin_top = -9.0
+margin_right = -74.0
+margin_bottom = 108.0
+rect_rotation = -63.6054
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Groups/Group2"]
+margin_left = -79.0
+margin_right = -76.0
+margin_bottom = 117.0
+rect_rotation = -63.6054
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Groups/Group2"]
+margin_left = -83.0
+margin_top = -22.0
+margin_right = -80.0
+margin_bottom = 95.0
+rect_rotation = -63.6054
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="Groups/Group2"]
+margin_right = 283.0
+margin_bottom = 145.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="VBoxContainer" parent="Groups/Group2/Panel3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -121.5
+margin_top = -55.0
+margin_right = 84.5
+margin_bottom = 55.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton2" type="Button" parent="Groups/Group2/Panel3/HBoxContainer3"]
+margin_right = 206.0
+margin_bottom = 47.0
+text = "A Snaky Path"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+index = 2
+
+[node name="Check" type="TextureRect" parent="Groups/Group2/Panel3/HBoxContainer3/LevelButton2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton3" type="Button" parent="Groups/Group2/Panel3/HBoxContainer3"]
+margin_top = 63.0
+margin_right = 206.0
+margin_bottom = 110.0
+text = "Parts Box"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+index = 3
+
+[node name="Check" type="TextureRect" parent="Groups/Group2/Panel3/HBoxContainer3/LevelButton3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group1" type="Control" parent="Groups"]
+margin_left = -485.0
+margin_top = 233.0
+margin_right = -279.0
+margin_bottom = 291.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Groups/Group1"]
+margin_left = 94.0
+margin_top = -56.0
+margin_right = 97.0
+margin_bottom = 11.0
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Groups/Group1"]
+margin_left = 226.0
+margin_top = -57.0
+margin_right = 229.0
+margin_bottom = 10.0
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Groups/Group1"]
+margin_left = 104.0
+margin_top = -86.0
+margin_right = 107.0
+margin_bottom = -19.0
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Groups/Group1"]
+margin_left = 217.0
+margin_top = -19.0
+margin_right = 220.0
+margin_bottom = 48.0
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Groups/Group1"]
+margin_left = 104.0
+margin_top = -17.0
+margin_right = 107.0
+margin_bottom = 99.0
+rect_rotation = -89.9999
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group1" type="Panel" parent="Groups/Group1"]
+margin_right = 327.0
+margin_bottom = 76.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton1" type="Button" parent="Groups/Group1/Group1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -148.5
+margin_top = -23.0
+margin_right = 107.5
+margin_bottom = 24.0
+text = "First Exercise"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+index = 1
+
+[node name="Check" type="TextureRect" parent="Groups/Group1/Group1/LevelButton1"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Group0" type="Panel" parent="Groups"]
+margin_left = -485.0
+margin_top = 119.0
+margin_right = -158.0
+margin_bottom = 195.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton0" type="Button" parent="Groups/Group0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.5
+margin_top = -23.5
+margin_right = 107.5
+margin_bottom = 23.5
+text = "Textbook Excerpt"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Check" type="TextureRect" parent="Groups/Group0/LevelButton0"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="templatePanel" type="Panel" parent="."]
+visible = false
+margin_left = -527.0
+margin_top = -16.0
+margin_right = -200.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -329.0
-margin_top = 36.0
+margin_top = 14.0
 margin_right = 329.0
-margin_bottom = 119.0
+margin_bottom = 97.0
 custom_fonts/font = SubResource( 1 )
 text = "A Halting Problem"
 align = 1
@@ -173,13 +711,13 @@ __meta__ = {
 
 [node name="SceneChange" parent="." instance=ExtResource( 4 )]
 
-[connection signal="pressed" from="LevelButton0" to="LevelButton0" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton1" to="LevelButton1" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton2" to="LevelButton2" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton3" to="LevelButton3" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton4" to="LevelButton4" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton5" to="LevelButton5" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton6" to="LevelButton6" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton7" to="LevelButton7" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton8" to="LevelButton8" method="_on_pressed"]
-[connection signal="pressed" from="LevelButton9" to="LevelButton9" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton7" to="Groups/Group5/Panel2/HBoxContainer/LevelButton7" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton8" to="Groups/Group5/Panel2/HBoxContainer/LevelButton8" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton9" to="Groups/Group5/Panel2/HBoxContainer/LevelButton9" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group4/Panel2/LevelButton6" to="Groups/Group4/Panel2/LevelButton6" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group3/Panel/HBoxContainer2/LevelButton4" to="Groups/Group3/Panel/HBoxContainer2/LevelButton4" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group3/Panel/HBoxContainer2/LevelButton5" to="Groups/Group3/Panel/HBoxContainer2/LevelButton5" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group2/Panel3/HBoxContainer3/LevelButton2" to="Groups/Group2/Panel3/HBoxContainer3/LevelButton2" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group2/Panel3/HBoxContainer3/LevelButton3" to="Groups/Group2/Panel3/HBoxContainer3/LevelButton3" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group1/Group1/LevelButton1" to="Groups/Group1/Group1/LevelButton1" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group0/LevelButton0" to="Groups/Group0/LevelButton0" method="_on_pressed"]

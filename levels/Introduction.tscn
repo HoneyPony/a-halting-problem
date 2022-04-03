@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://LSTheme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/NextButton.gd" type="Script" id=2]
 [ext_resource path="res://SceneChange.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/LevelRoot.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/day-roman/DAYROM__.ttf"
@@ -11,10 +12,11 @@ font_path = "res://fonts/day-roman/DAYROM__.ttf"
 size = 23
 font_data = SubResource( 1 )
 
-[node name="Introduction" type="ColorRect"]
+[node name="Root" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+script = ExtResource( 4 )
 
 [node name="BG" type="ColorRect" parent="."]
 anchor_left = 0.5
