@@ -87,6 +87,20 @@ __meta__ = {
 }
 index = 4
 
+[node name="LevelButton5" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -71.0
+margin_top = 556.0
+margin_right = 267.0
+margin_bottom = 618.0
+text = "Scenic Route"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+index = 4
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -108,3 +122,4 @@ __meta__ = {
 [connection signal="pressed" from="LevelButton2" to="LevelButton2" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton3" to="LevelButton3" method="_on_pressed"]
 [connection signal="pressed" from="LevelButton4" to="LevelButton4" method="_on_pressed"]
+[connection signal="pressed" from="LevelButton5" to="LevelButton5" method="_on_pressed"]
