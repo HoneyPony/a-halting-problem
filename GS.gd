@@ -13,7 +13,11 @@ var levels = [
 	preload("res://levels/LevelChoiceOfBoxes.tscn"),
 	preload("res://levels/LevelScenicRoute.tscn"),  # index 5
 	
-	preload("res://levels/LevelFirstRep.tscn")
+	preload("res://levels/LevelFirstRep.tscn"),
+	
+	preload("res://levels/LevelStairStep.tscn"), # index 7
+	preload("res://levels/LevelLongShot.tscn"), # index 8
+	preload("res://levels/LevelTwistyCurve.tscn"),
 ]
 
 var current_level: PackedScene = null
@@ -23,6 +27,8 @@ var level_won_map = {}
 var code_execute_flag = false
 
 var code_stop_next_flag = false
+
+var is_same_scene_flag = false
 
 func reset():
 	code_execute_flag = false

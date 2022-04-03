@@ -18,7 +18,7 @@ params_billboard_mode = 1
 albedo_texture = SubResource( 6 )
 
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 1, 1.73039, 1.45981 )
+extents = Vector3( 1, 1.69345, 0.445099 )
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.8, 1, 0.8 )

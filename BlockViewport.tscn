@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/ListRoot.gd" type="Script" id=2]
 [ext_resource path="res://BlockViewport.gd" type="Script" id=3]
 
 [node name="BlockViewport" type="Control"]
@@ -30,6 +31,7 @@ physics_object_picking = true
 [node name="ListRoot" type="Node2D" parent="BlockViewport/Viewport"]
 position = Vector2( 8, 8 )
 scale = Vector2( 0.6, 0.6 )
+script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_top = 1.0

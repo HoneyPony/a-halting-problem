@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://LevelEnv.tres" type="Environment" id=1]
 [ext_resource path="res://levels/LevelRoot.gd" type="Script" id=2]
@@ -15,10 +15,17 @@
 [ext_resource path="res://blocks/BlockMove.tscn" type="PackedScene" id=13]
 [ext_resource path="res://blocks/BlockRepeat.tscn" type="PackedScene" id=14]
 [ext_resource path="res://blocks/BlockRotate.tscn" type="PackedScene" id=15]
+[ext_resource path="res://MainTheme.tres" type="Theme" id=16]
+[ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://ui/TutorialButton.gd" type="Script" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 17 )
 
 [node name="Root" type="Spatial"]
 script = ExtResource( 2 )
-level_index = 1
+level_index = 6
 
 [node name="BlockLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -39,6 +46,48 @@ run_by_deleting = true
 [node name="BlockEnd" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 11 )]
 
 [node name="Layout" parent="BlockLayer" instance=ExtResource( 6 )]
+
+[node name="Tutorial" type="ColorRect" parent="BlockLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -208.0
+theme = ExtResource( 16 )
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="BlockLayer/Tutorial"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -47.0
+margin_top = -79.0
+margin_right = 47.0
+margin_bottom = -17.0
+text = "OK"
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+parent_path = NodePath("..")
+
+[node name="Label3" type="Label" parent="BlockLayer/Tutorial"]
+anchor_right = 1.0
+margin_left = 11.0
+margin_top = 11.0
+margin_right = -14.0
+margin_bottom = 95.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "A repeat instruction repeatedly executes all the instructions nested beneath it. 
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PauseLayer" parent="BlockLayer" instance=ExtResource( 8 )]
 visible = false

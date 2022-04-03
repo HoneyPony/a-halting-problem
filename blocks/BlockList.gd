@@ -182,10 +182,12 @@ func arrange_children(force = false):
 		
 	y += 32 * global_scale.y
 		
-		
+	my_height = y
 		
 	col_shape.extents.y = y * 0.5 / global_scale.y
 	col.position.y = col_shape.extents.y
+		
+var my_height
 		
 func _process(delta):
 	arrange_children()

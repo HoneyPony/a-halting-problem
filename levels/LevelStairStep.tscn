@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://LevelEnv.tres" type="Environment" id=1]
+[ext_resource path="res://levels/LevelRoot.gd" type="Script" id=4]
+[ext_resource path="res://GameCamera.gd" type="Script" id=5]
+[ext_resource path="res://blocks/BlockList.tscn" type="PackedScene" id=6]
+[ext_resource path="res://blocks/BlockRepeat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://misc/Panel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/MessagesLayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://misc/GoalPanel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ui/PauseLayer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://bot/Bot.tscn" type="PackedScene" id=12]
+[ext_resource path="res://blocks/BlockRotate.tscn" type="PackedScene" id=13]
+[ext_resource path="res://BlockViewport.tscn" type="PackedScene" id=14]
+[ext_resource path="res://blocks/BlockEnd.tscn" type="PackedScene" id=15]
+[ext_resource path="res://SceneChange.tscn" type="PackedScene" id=16]
+[ext_resource path="res://blocks/BlockMove.tscn" type="PackedScene" id=17]
+
+[node name="Root" type="Spatial"]
+script = ExtResource( 4 )
+level_index = 7
+
+[node name="BlockLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="BlockViewport" parent="BlockLayer" instance=ExtResource( 14 )]
+
+[node name="RootBlockList" parent="BlockLayer/BlockViewport" groups=["CodeRoot"] instance=ExtResource( 6 )]
+run_by_deleting = true
+
+[node name="BlockMove5" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 17 )]
+
+[node name="BlockRepeat" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 7 )]
+
+[node name="BlockRotate" parent="BlockLayer/BlockViewport/RootBlockList/BlockRepeat" instance=ExtResource( 13 )]
+
+[node name="BlockRotate2" parent="BlockLayer/BlockViewport/RootBlockList/BlockRepeat" instance=ExtResource( 13 )]
+selected_option = 1
+
+[node name="BlockRepeat2" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 7 )]
+
+[node name="BlockRotate" parent="BlockLayer/BlockViewport/RootBlockList/BlockRepeat2" instance=ExtResource( 13 )]
+
+[node name="BlockRotate2" parent="BlockLayer/BlockViewport/RootBlockList/BlockRepeat2" instance=ExtResource( 13 )]
+selected_option = 1
+
+[node name="BlockEnd" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 15 )]
+
+[node name="BlockMove" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 17 )]
+
+[node name="BlockMove2" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 17 )]
+
+[node name="BlockMove3" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 17 )]
+
+[node name="BlockMove4" parent="BlockLayer/BlockViewport/RootBlockList" instance=ExtResource( 17 )]
+
+[node name="Layout" parent="BlockLayer" instance=ExtResource( 9 )]
+
+[node name="PauseLayer" parent="BlockLayer" instance=ExtResource( 11 )]
+visible = false
+
+[node name="Bot" parent="." instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
+
+[node name="CameraRoot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 8.296, 0, 1.785 )
+
+[node name="Camera" type="Camera" parent="CameraRoot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60 )
+current = true
+fov = 10.0
+script = ExtResource( 5 )
+
+[node name="SceneChange" parent="." instance=ExtResource( 16 )]
+
+[node name="Spatial" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="Spatial2" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, -1, 0 )
+
+[node name="Spatial3" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, -1, 2, -1, 2 )
+
+[node name="Spatial4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 5.76205e-08, 0, 1, 0, -5.76205e-08, 0, 1, 4, -1, 2 )
+
+[node name="Spatial6" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1.01332e-07, 0, 1, 0, 1, 0, -1, 0, -1.01332e-07, 4, -1, 4 )
+
+[node name="Spatial7" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.88755e-07, 0, -1, 0, 1, 0, 1, 0, 1.88755e-07, 6, -1, 4 )
+
+[node name="Spatial8" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.88755e-07, 0, -1, 0, 1, 0, 1, 0, 1.88755e-07, 6, -1, 6 )
+
+[node name="Spatial9" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 2.32466e-07, 0, 1, 0, -2.32466e-07, 0, 1, 8, -1, 6 )
+
+[node name="Spatial10" parent="." instance=ExtResource( 8 )]
+transform = Transform( -2.76178e-07, 0, 1, 0, 1, 0, -1, 0, -2.76178e-07, 8, -1, 4 )
+
+[node name="Spatial11" parent="." instance=ExtResource( 8 )]
+transform = Transform( 3.63601e-07, 0, -1, 0, 1, 0, 1, 0, 3.63601e-07, 10, -1, 4 )
+
+[node name="Spatial12" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -3.19889e-07, 0, 1, 0, 3.19889e-07, 0, -1, 10, -1, 2 )
+
+[node name="Spatial13" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 4.07312e-07, 0, 1, 0, -4.07312e-07, 0, 1, 12, -1, 2 )
+
+[node name="Spatial14" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.51023e-07, 0, 1, 0, 1, 0, -1, 0, -4.51023e-07, 12, -1, 0 )
+
+[node name="Spatial5" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, 0 )
