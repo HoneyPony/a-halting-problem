@@ -18,9 +18,10 @@ params_billboard_mode = 1
 albedo_texture = SubResource( 6 )
 
 [sub_resource type="BoxShape" id=7]
+extents = Vector3( 1, 1.73039, 1.45981 )
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.8, 2.01222, 0.367078 )
+extents = Vector3( 0.8, 1, 0.8 )
 
 [node name="PlusBox" type="Spatial"]
 script = ExtResource( 2 )
@@ -50,12 +51,14 @@ collision_layer = 2147483648
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="MouseDetect"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0351715, 0 )
 shape = SubResource( 7 )
 
 [node name="DetectBot" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="DetectBot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402416, 0 )
+visible = false
 shape = SubResource( 5 )
 
 [connection signal="mouse_entered" from="MouseDetect" to="." method="_on_MouseDetect_mouse_entered"]

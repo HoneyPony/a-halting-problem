@@ -68,7 +68,23 @@ func check_player():
 
 var mouse_frames = 0
 
+func update_mouse():
+	var camera = GS.cam_3d
+	var from = camera.project_ray_origin(get_viewport().get_mouse_position())
+	var to = from + camera.project_ray_normal(get_viewport().get_mouse_position()) * 400
+	
+	var sstate = get_world().direct_space_state
+	var result = sstate.intersect_ray(from, to, [], $MouseDetect.collision_layer)
+	
+	if result:
+		has_mouse = (result.collider == $MouseDetect)
+	else:
+		has_mouse = false
+	
+
 func _physics_process(delta):
+	update_mouse()
+	
 	mesh.rotate_y(3 * delta)
 	
 
@@ -115,12 +131,15 @@ func _physics_process(delta):
 var has_mouse = false
 
 func _on_MouseDetect_mouse_entered():
-	has_mouse = true
+	pass
+	#print("MOUSE")
+	##has_mouse = true
 	#ubble_alpha_t = 1.0
 	#bubble.show()
 
 
 func _on_MouseDetect_mouse_exited():
-	has_mouse = false
+	pass
+	#has_mouse = false
 	#bubble_alpha_t = 0.0
 	#bubble.hide()

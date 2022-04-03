@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ui/MessagesLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneChange.tscn" type="PackedScene" id=2]
@@ -11,8 +11,15 @@
 [ext_resource path="res://misc/Panel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://misc/GoalPanel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://LevelEnv.tres" type="Environment" id=11]
+[ext_resource path="res://MainTheme.tres" type="Theme" id=12]
+[ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://levels/LevelRoot.gd" type="Script" id=14]
+[ext_resource path="res://ui/TutorialButton.gd" type="Script" id=15]
 [ext_resource path="res://ui/PauseLayer.tscn" type="PackedScene" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 13 )
 
 [node name="Root" type="Spatial"]
 script = ExtResource( 14 )
@@ -40,6 +47,86 @@ run_by_deleting = true
 
 [node name="PauseLayer" parent="BlockLayer" instance=ExtResource( 16 )]
 visible = false
+
+[node name="Tutorial" type="ColorRect" parent="BlockLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 12 )
+color = Color( 0, 0, 0, 0.713726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="BlockLayer/Tutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -382.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BlockLayer/Tutorial/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -216.5
+margin_top = 53.0
+margin_right = 216.5
+margin_bottom = 140.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Your goal is to move the
+robot to the finish flag."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="BlockLayer/Tutorial/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -178.0
+margin_top = 4.0
+margin_right = 179.0
+margin_bottom = 107.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Click and drag in this area to move the camera around."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="BlockLayer/Tutorial"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -365.0
+margin_top = -99.0
+margin_right = -8.0
+margin_bottom = 188.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Instructions for the robot are in this panel, where you can rearrange them.
+
+However, instructions cannot be deleted.
+
+As such, you will need to move the 'stop' instruction or the robot will stop immediately."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="BlockLayer/Tutorial"]
+margin_left = 291.0
+margin_top = 506.0
+margin_right = 385.0
+margin_bottom = 568.0
+text = "OK"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Bot" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
