@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=14 format=2]
 
 [ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/grabber_icon_high.svg" type="Texture" id=2]
+[ext_resource path="res://ui/grabber_icon.svg" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=12]
 content_margin_left = 20.0
@@ -40,6 +42,15 @@ bg_color = Color( 0.223529, 0.223529, 0.223529, 1 )
 border_width_top = 6
 border_color = Color( 0, 0, 0, 0 )
 
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxFlat" id=19]
+content_margin_top = 4.0
+bg_color = Color( 0, 0, 0, 1 )
+
 [sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0.121569, 0.121569, 0.121569, 1 )
 border_width_left = 1
@@ -63,5 +74,10 @@ Button/styles/focus = SubResource( 13 )
 Button/styles/hover = SubResource( 14 )
 Button/styles/normal = SubResource( 15 )
 Button/styles/pressed = SubResource( 16 )
+HSlider/icons/grabber = ExtResource( 3 )
+HSlider/icons/grabber_highlight = ExtResource( 2 )
+HSlider/styles/grabber_area = SubResource( 20 )
+HSlider/styles/grabber_area_highlight = SubResource( 21 )
+HSlider/styles/slider = SubResource( 19 )
 Label/colors/font_color = Color( 0.964706, 0.964706, 0.964706, 1 )
 Panel/styles/panel = SubResource( 18 )

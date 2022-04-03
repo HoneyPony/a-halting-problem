@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://LSTheme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/ResetButton.gd" type="Script" id=2]
 [ext_resource path="res://ui/PauseMenu.gd" type="Script" id=3]
 [ext_resource path="res://ui/ButtonSFX.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/Volume.tscn" type="PackedScene" id=5]
 
 [node name="Pause" type="Control"]
 pause_mode = 2
@@ -64,6 +65,15 @@ __meta__ = {
 }
 
 [node name="ButtonSFX" parent="Menu/QuitButton" instance=ExtResource( 4 )]
+
+[node name="Control" parent="Menu" instance=ExtResource( 5 )]
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_left = 25.0
+margin_top = -58.0
+margin_right = 309.0
+margin_bottom = 96.0
 
 [node name="PauseButton" type="Button" parent="."]
 margin_left = 16.0

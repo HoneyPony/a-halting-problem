@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://LSTheme_SmallerButtons.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ui/check_empty.svg" type="Texture" id=5]
 [ext_resource path="res://ui/LevelGroupManager.gd" type="Script" id=6]
 [ext_resource path="res://ui/ButtonSFX.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/Volume.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -875,6 +876,15 @@ __meta__ = {
 }
 
 [node name="SceneChange" parent="." instance=ExtResource( 4 )]
+
+[node name="Control" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = 236.0
+margin_top = 106.0
+margin_right = 533.0
+margin_bottom = 219.0
 
 [connection signal="pressed" from="Groups/Group6/Panel2/LevelButton9" to="Groups/Group6/Panel2/LevelButton9" method="_on_pressed"]
 [connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton7" to="Groups/Group5/Panel2/HBoxContainer/LevelButton7" method="_on_pressed"]
