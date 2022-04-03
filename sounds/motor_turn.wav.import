@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/motor_turn.wav-6858789b0fd1a55e29e0d9671cd2e0de.sample"
+
+[deps]
+
+source_file="res://sounds/motor_turn.wav"
+dest_files=[ "res://.import/motor_turn.wav-6858789b0fd1a55e29e0d9671cd2e0de.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

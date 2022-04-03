@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://ui/MessagesLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneChange.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://levels/LevelRoot.gd" type="Script" id=14]
 [ext_resource path="res://ui/TutorialButton.gd" type="Script" id=15]
 [ext_resource path="res://ui/PauseLayer.tscn" type="PackedScene" id=16]
+[ext_resource path="res://ui/ButtonSFX.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -108,6 +109,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 parent_path = NodePath("../..")
+
+[node name="ButtonSFX" parent="BlockLayer/Tutorial/Control/Button" instance=ExtResource( 17 )]
 
 [node name="Label2" type="Label" parent="BlockLayer/Tutorial"]
 anchor_left = 1.0

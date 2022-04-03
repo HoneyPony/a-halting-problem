@@ -21,6 +21,9 @@ var levels = [
 	preload("res://levels/LevelStairStep.tscn"), # index 7
 	preload("res://levels/LevelLongShot.tscn"), # index 8
 	preload("res://levels/LevelTwistyCurve.tscn"),
+	preload("res://levels/LevelWeirdRep.tscn"),
+	
+	preload("res://levels/Congrat.tscn")
 ]
 
 func beat_all(start, end):
@@ -37,12 +40,14 @@ func compute_group_enables():
 	group_enables[3] = beat_all(0, 3)
 	group_enables[4] = beat_all(0, 5)
 	group_enables[5] = beat_all(0, 6)
+	group_enables[6] = beat_all(0, 10)
 	
-	print(group_enables)
-	print(level_won_map)
+	#print(group_enables)
+	#print(level_won_map)
 
 var group_enables =[
 	true,
+	false,
 	false,
 	false,
 	false,
@@ -52,6 +57,7 @@ var group_enables =[
 
 var group_alpha = [
 	1.0,
+	0.0,
 	0.0,
 	0.0,
 	0.0,

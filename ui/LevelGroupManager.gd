@@ -6,7 +6,8 @@ onready var groups = [
 	$Group2,
 	$Group3,
 	$Group4,
-	$Group5
+	$Group5,
+	$Group6
 ]
 
 var wait_to_reveal = 0.8
@@ -33,7 +34,12 @@ func _physics_process(delta):
 		if GS.group_enables[i]:
 			target = 1.0
 			
-		alpha += (target - alpha) * 0.05
+		var f = 0.05
+		if alpha > 0.5:
+			f = 0.1
+		if alpha > 0.96:
+			f = 1.0
+		alpha += (target - alpha) * f
 		
 		GS.group_alpha[i] = alpha
 		

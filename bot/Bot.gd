@@ -37,7 +37,7 @@ func finish_current_line():
 	move_end = current_pos
 
 func execute_next_line():	
-
+	SFX.code_execute.play_usual()
 	
 	code_timer = GS.CODE_TIME_MAX
 	
@@ -102,6 +102,8 @@ func move_command(command):
 	move_start = global_transform.origin
 	move_end = move_start + offset
 	
+	SFX.motor_s.play()
+	
 func rotate_command(command):
 	var rot = rotation
 	wheel_coef = [1, 1, -1, -1]
@@ -114,6 +116,8 @@ func rotate_command(command):
 	rot.y += delta_y
 	rot_end = Quat(rot)
 	rot_start = Quat(rotation)
+	
+	SFX.motor_t.play()
 
 var grav_vel = Vector3.ZERO
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://LevelEnv.tres" type="Environment" id=1]
 [ext_resource path="res://MainTheme.tres" type="Theme" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://blocks/BlockMove.tscn" type="PackedScene" id=16]
 [ext_resource path="res://plus/PlusBox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://lists/List3Move.tscn" type="PackedScene" id=18]
+[ext_resource path="res://ui/ButtonSFX.tscn" type="PackedScene" id=19]
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -69,6 +70,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 parent_path = NodePath("..")
+
+[node name="ButtonSFX" parent="BlockLayer/Tutorial/Button" instance=ExtResource( 19 )]
 
 [node name="Label3" type="Label" parent="BlockLayer/Tutorial"]
 anchor_right = 1.0

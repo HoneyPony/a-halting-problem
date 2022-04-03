@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://LSTheme_SmallerButtons.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://SceneChange.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/check_empty.svg" type="Texture" id=5]
 [ext_resource path="res://ui/LevelGroupManager.gd" type="Script" id=6]
+[ext_resource path="res://ui/ButtonSFX.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -31,6 +32,121 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Group6" type="Control" parent="Groups"]
+margin_left = -33.0
+margin_top = 595.0
+margin_right = 7.0
+margin_bottom = 635.0
+rect_pivot_offset = Vector2( -40, -225 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Groups/Group6"]
+margin_left = 273.0
+margin_top = -69.0
+margin_right = 276.0
+margin_bottom = 9.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Groups/Group6"]
+margin_left = 417.0
+margin_top = -69.0
+margin_right = 420.0
+margin_bottom = 9.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Groups/Group6"]
+margin_left = 304.0
+margin_top = -67.0
+margin_right = 307.0
+margin_bottom = 11.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Groups/Group6"]
+margin_left = 312.0
+margin_top = -67.0
+margin_right = 315.0
+margin_bottom = 11.0
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Groups/Group6"]
+margin_left = -52.0
+margin_top = -120.0
+margin_right = -49.0
+margin_bottom = 36.0
+rect_rotation = -37.6024
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Groups/Group6"]
+margin_left = -43.0
+margin_top = -124.0
+margin_right = -40.0
+margin_bottom = 32.0
+rect_rotation = -37.6024
+rect_pivot_offset = Vector2( 2, 47 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Groups/Group6"]
+margin_right = 432.0
+margin_bottom = 84.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton9" type="Button" parent="Groups/Group6/Panel2"]
+margin_left = 26.5
+margin_top = 21.0
+margin_right = 365.5
+margin_bottom = 68.0
+text = "Certificate of Graduation"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+index = 11
+
+[node name="Check" type="TextureRect" parent="Groups/Group6/Panel2/LevelButton9"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSFX" parent="Groups/Group6/Panel2/LevelButton9" instance=ExtResource( 7 )]
 
 [node name="Group5" type="Control" parent="Groups"]
 margin_left = 226.0
@@ -104,7 +220,7 @@ __meta__ = {
 
 [node name="Panel2" type="Panel" parent="Groups/Group5"]
 margin_right = 303.0
-margin_bottom = 215.0
+margin_bottom = 284.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -116,9 +232,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -125.0
-margin_top = -86.5
+margin_top = -119.0
 margin_right = 90.0
-margin_bottom = 86.5
+margin_bottom = 117.0
 custom_constants/separation = 16
 __meta__ = {
 "_edit_lock_": true,
@@ -151,6 +267,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonSFX" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton7" instance=ExtResource( 7 )]
+
 [node name="LevelButton8" type="Button" parent="Groups/Group5/Panel2/HBoxContainer"]
 margin_top = 63.0
 margin_right = 215.0
@@ -178,6 +296,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonSFX" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton8" instance=ExtResource( 7 )]
+
 [node name="LevelButton9" type="Button" parent="Groups/Group5/Panel2/HBoxContainer"]
 margin_top = 126.0
 margin_right = 215.0
@@ -204,6 +324,37 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonSFX" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton9" instance=ExtResource( 7 )]
+
+[node name="LevelButton10" type="Button" parent="Groups/Group5/Panel2/HBoxContainer"]
+margin_top = 189.0
+margin_right = 215.0
+margin_bottom = 236.0
+text = "Bizarre Box"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+index = 10
+
+[node name="Check" type="TextureRect" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton10"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 44.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSFX" parent="Groups/Group5/Panel2/HBoxContainer/LevelButton10" instance=ExtResource( 7 )]
 
 [node name="Group4" type="Control" parent="Groups"]
 margin_left = -483.0
@@ -275,6 +426,8 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonSFX" parent="Groups/Group4/Panel2/LevelButton6" instance=ExtResource( 7 )]
 
 [node name="Group3" type="Control" parent="Groups"]
 margin_left = -182.0
@@ -389,6 +542,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonSFX" parent="Groups/Group3/Panel/HBoxContainer2/LevelButton4" instance=ExtResource( 7 )]
+
 [node name="LevelButton5" type="Button" parent="Groups/Group3/Panel/HBoxContainer2"]
 margin_top = 63.0
 margin_right = 285.0
@@ -415,6 +570,8 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonSFX" parent="Groups/Group3/Panel/HBoxContainer2/LevelButton5" instance=ExtResource( 7 )]
 
 [node name="Group2" type="Control" parent="Groups"]
 margin_left = -93.0
@@ -517,6 +674,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonSFX" parent="Groups/Group2/Panel3/HBoxContainer3/LevelButton2" instance=ExtResource( 7 )]
+
 [node name="LevelButton3" type="Button" parent="Groups/Group2/Panel3/HBoxContainer3"]
 margin_top = 63.0
 margin_right = 206.0
@@ -543,6 +702,8 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonSFX" parent="Groups/Group2/Panel3/HBoxContainer3/LevelButton3" instance=ExtResource( 7 )]
 
 [node name="Group1" type="Control" parent="Groups"]
 margin_left = -485.0
@@ -645,6 +806,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonSFX" parent="Groups/Group1/Group1/LevelButton1" instance=ExtResource( 7 )]
+
 [node name="Group0" type="Panel" parent="Groups"]
 margin_left = -485.0
 margin_top = 119.0
@@ -685,6 +848,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonSFX" parent="Groups/Group0/LevelButton0" instance=ExtResource( 7 )]
+
 [node name="templatePanel" type="Panel" parent="."]
 visible = false
 margin_left = -527.0
@@ -711,9 +876,11 @@ __meta__ = {
 
 [node name="SceneChange" parent="." instance=ExtResource( 4 )]
 
+[connection signal="pressed" from="Groups/Group6/Panel2/LevelButton9" to="Groups/Group6/Panel2/LevelButton9" method="_on_pressed"]
 [connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton7" to="Groups/Group5/Panel2/HBoxContainer/LevelButton7" method="_on_pressed"]
 [connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton8" to="Groups/Group5/Panel2/HBoxContainer/LevelButton8" method="_on_pressed"]
 [connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton9" to="Groups/Group5/Panel2/HBoxContainer/LevelButton9" method="_on_pressed"]
+[connection signal="pressed" from="Groups/Group5/Panel2/HBoxContainer/LevelButton10" to="Groups/Group5/Panel2/HBoxContainer/LevelButton10" method="_on_pressed"]
 [connection signal="pressed" from="Groups/Group4/Panel2/LevelButton6" to="Groups/Group4/Panel2/LevelButton6" method="_on_pressed"]
 [connection signal="pressed" from="Groups/Group3/Panel/HBoxContainer2/LevelButton4" to="Groups/Group3/Panel/HBoxContainer2/LevelButton4" method="_on_pressed"]
 [connection signal="pressed" from="Groups/Group3/Panel/HBoxContainer2/LevelButton5" to="Groups/Group3/Panel/HBoxContainer2/LevelButton5" method="_on_pressed"]

@@ -71,6 +71,7 @@ func _physics_process(delta):
 		if options_enum == GS.current_held_block:
 			if not options_enum.get_popup().visible:
 				GS.current_held_block = null
+				SFX.block_etc.play_sfx()
 #	if reset_held_block_timer > 0.0:
 #		reset_held_block_timer -= delta
 #		if reset_held_block_timer <= 0:
@@ -148,6 +149,9 @@ func end_drag():
 	block_parent = new_parent
 	clear_drag_children()
 	
+	# eh, the put one is too weird
+	SFX.block_pick.play_sfx()
+	
 func mark_drag_children(list):
 	var bl = get_node_or_null("BlockList")
 	if bl != null:
@@ -167,6 +171,8 @@ func start_drag():
 	
 	if is_dragging:
 		return
+		
+	SFX.block_pick.play_sfx()
 		
 	GS.current_held_block = self
 	
@@ -193,6 +199,7 @@ func _on_Block_input_event(viewport, event, shape_idx):
 
 func _on_Options_pressed():
 	if GS.current_held_block == null:
+		SFX.block_etc.play_sfx()
 		GS.current_held_block = get_node("Sprite/Options")
 	else:
 		options_enum.get_popup().hide()
