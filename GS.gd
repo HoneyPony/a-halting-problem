@@ -5,6 +5,8 @@ var TexUnchecked = preload("res://ui/check_empty.svg")
 
 var LevelSelect = preload("res://LevelSelect.tscn")
 
+var first_scene_change = true
+
 var levels = [
 	preload("res://levels/Introduction.tscn"),
 	

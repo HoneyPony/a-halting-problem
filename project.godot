@@ -10,21 +10,18 @@ config_version=4
 
 [application]
 
-config/name="LD50"
+config/name="A Halting Problem"
 run/main_scene="res://LevelSelect.tscn"
 boot_splash/image="res://icon/Splash.png"
 boot_splash/bg_color=Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 config/icon="res://icon/icon.png"
-
-[audio]
-
-output_latency.web=15
 
 [autoload]
 
 GS="*res://GS.gd"
 Music="*res://Music.tscn"
 SFX="*res://SFX.tscn"
+FullscreenF11="*res://FullscreenF11.tscn"
 
 [debug]
 
@@ -34,6 +31,14 @@ settings/stdout/print_fps=true
 
 window/size/width=1080
 window/size/height=720
+
+[input]
+
+fullscreen={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777254,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 

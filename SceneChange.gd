@@ -6,6 +6,10 @@ func _ready():
 	GS.reset()
 	GS.scene_change = self
 	
+	if GS.first_scene_change:
+		$AnimationPlayer.play("RESET")
+	GS.first_scene_change = false
+	
 var change_to = null
 	
 func change(scene: PackedScene, same_scene_flag = false):
